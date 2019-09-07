@@ -15,7 +15,7 @@ struct NewsList: View {
     var body: some View {
       NavigationView{
         List(newsModel.articles){ article in
-          NewsItemCell(article: article, mainModel: self.newsModel)
+          NewsItemCell(article: article)
         }.navigationBarTitle("Snooz").navigationBarHidden(false)
         }
     }
@@ -24,7 +24,7 @@ struct NewsList: View {
 struct NewsItemCell: View {
 
   var article:Article
-  var mainModel:NewsModel
+  @EnvironmentObject var mainModel:NewsModel
   
   func getImage()->UIImage {
     mainModel.images[article.id] ?? UIImage(systemName: "gear")!
@@ -43,8 +43,8 @@ struct NewsList_Previews: PreviewProvider {
 
     static var previews: some View {
       Group {
-        NewsList().environmentObject(TestData())
-        NewsItemCell(article: TestData().articles[0], mainModel: TestData())
-      }
+        NewsList()
+        //NewsItemCell(article: TestData().articles[0])
+      }.environmentObject(TestData())
     }
 }
