@@ -36,7 +36,7 @@ class TestData : NewsModel{
   override func loadImages() {
     print("called")
     for article in articles{
-      images[article.id] = UIImage(systemName: "gear")
+      images[article.id] = UIImage(systemName: "doc.richtext")
     }
   }
   

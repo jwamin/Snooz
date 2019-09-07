@@ -27,7 +27,7 @@ struct NewsItemCell: View {
   @EnvironmentObject var mainModel:NewsModel
   
   func getImage()->UIImage {
-    mainModel.images[article.id] ?? UIImage(systemName: "gear")!
+    mainModel.images[article.id] ?? UIImage(systemName: "doc.richtext")!
   }
   
   var body: some View {
@@ -39,12 +39,18 @@ struct NewsItemCell: View {
   
 }
 
+#if DEBUG
+
+let testData = TestData()
+
 struct NewsList_Previews: PreviewProvider {
 
     static var previews: some View {
       Group {
-        NewsList()
-        //NewsItemCell(article: TestData().articles[0])
-      }.environmentObject(TestData())
+        //NewsList().environmentObject(TestData())
+        NewsItemCell(article: testData.articles[0])
+      }
     }
 }
+
+#endif
