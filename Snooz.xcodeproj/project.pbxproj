@@ -16,6 +16,7 @@
 		5700D4AA2323F69C005B818F /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700D4A92323F69C005B818F /* NewsModel.swift */; };
 		5700D4AD2323F780005B818F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700D4AC2323F780005B818F /* Constants.swift */; };
 		5700D4AF23243DA8005B818F /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700D4AE23243DA8005B818F /* TestData.swift */; };
+		57B34CAD23252AD400208D78 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B34CAC23252AD400208D78 /* ArticleDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		5700D4AB2323F6A9005B818F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5700D4AC2323F780005B818F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5700D4AE23243DA8005B818F /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		57B34CAC23252AD400208D78 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				5700D4952323F65C005B818F /* AppDelegate.swift */,
 				5700D4972323F65C005B818F /* SceneDelegate.swift */,
 				5700D4A92323F69C005B818F /* NewsModel.swift */,
+				57B34CAC23252AD400208D78 /* ArticleDetailView.swift */,
 				5700D4AC2323F780005B818F /* Constants.swift */,
 				5700D4992323F65C005B818F /* NewsList.swift */,
 				5700D4AE23243DA8005B818F /* TestData.swift */,
@@ -160,6 +163,7 @@
 				5700D4AD2323F780005B818F /* Constants.swift in Sources */,
 				5700D4AA2323F69C005B818F /* NewsModel.swift in Sources */,
 				5700D4962323F65C005B818F /* AppDelegate.swift in Sources */,
+				57B34CAD23252AD400208D78 /* ArticleDetailView.swift in Sources */,
 				5700D4AF23243DA8005B818F /* TestData.swift in Sources */,
 				5700D4982323F65C005B818F /* SceneDelegate.swift in Sources */,
 				5700D49A2323F65C005B818F /* NewsList.swift in Sources */,

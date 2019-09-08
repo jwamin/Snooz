@@ -13,11 +13,15 @@ class NewsModel : ObservableObject {
   
   var objectWillChange: ObservableObjectPublisher = ObservableObjectPublisher()
   
-  var images = [UUID:UIImage]() {
+  internal var images = [UUID:UIImage]() {
     didSet{
       print(images)
       self.objectWillChange.send()
     }
+  }
+  
+  func getImage(id:UUID)->UIImage {
+    self.images[id] ?? UIImage(systemName: "doc.richtext")!
   }
   
   var articles:[Article] = [] {
@@ -49,6 +53,8 @@ class NewsModel : ObservableObject {
   }
   
   func loadData(){
+    //resetImages
+    images = [:]
     if let url = URL(string: Constants.topLocalHeadlines){
       print(url)
       cancellable = URLSession.shared.dataTaskPublisher(for: url).map({ response in

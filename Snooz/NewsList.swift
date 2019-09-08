@@ -15,8 +15,12 @@ struct NewsList: View {
     var body: some View {
       NavigationView{
         List(newsModel.articles){ article in
-          NewsItemCell(article: article)
-        }.navigationBarTitle("Snooz").navigationBarHidden(false)
+          NavigationLink(destination: 
+            ArticleDetailView(article: article)
+          ){
+            NewsItemCell(article: article, image: self.newsModel.getImage(id: article.id))
+          }
+          }.navigationBarTitle("Snooz",displayMode: .automatic)
         }
     }
 }
@@ -24,15 +28,11 @@ struct NewsList: View {
 struct NewsItemCell: View {
 
   var article:Article
-  @EnvironmentObject var mainModel:NewsModel
-  
-  func getImage()->UIImage {
-    mainModel.images[article.id] ?? UIImage(systemName: "doc.richtext")!
-  }
+  var image:UIImage
   
   var body: some View {
     HStack{
-    Image(uiImage: getImage()).frame(width: 40, height: 40).cornerRadius(10)
+      Image(uiImage: image).resizable().aspectRatio(contentMode: .fill).frame(width: 40, height: 40).cornerRadius(10)
     Text(article.title)
     }
   }
@@ -48,7 +48,7 @@ struct NewsList_Previews: PreviewProvider {
     static var previews: some View {
       Group {
         //NewsList().environmentObject(TestData())
-        NewsItemCell(article: testData.articles[0])
+        NewsItemCell(article: testData.articles[0],image: testData.getImage(id: testData.articles[0].id))
       }
     }
 }
