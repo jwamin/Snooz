@@ -12,23 +12,26 @@ import Combine
 class NewsModel : ObservableObject {
   
   var objectWillChange: ObservableObjectPublisher = ObservableObjectPublisher()
+  var load:Bool
   
-  internal var images = [UUID:UIImage]() {
+  internal var images = [UUID:Image]() {
     didSet{
       print(images)
       self.objectWillChange.send()
     }
   }
   
-  func getImage(id:UUID)->UIImage {
-    self.images[id] ?? UIImage(systemName: "doc.richtext")!
+  func getImage(id:UUID)->Image {
+    self.images[id] ?? Image(systemName: "doc.richtext")
   }
   
   var articles:[Article] = [] {
     didSet{
       print(articles.count)
       self.objectWillChange.send()
-      self.loadImages()
+      if load {
+        self.loadImages()
+      }
     }
   }
   
@@ -36,7 +39,10 @@ class NewsModel : ObservableObject {
   
   init(load:Bool = true) {
     print("hello world")
-    self.loadData()
+    self.load = load
+    if load {
+      self.loadData()
+    }
   }
   
   func loadImages(){
@@ -44,7 +50,7 @@ class NewsModel : ObservableObject {
       if !images.keys.contains(article.id), let imageurl = article.imageURL, imageurl.scheme == "https"{
         //load image into memory
         _ = URLSession.shared.dataTaskPublisher(for: imageurl).map({ response in
-          UIImage(data: response.data)
+          Image(uiImage:UIImage(data: response.data)!)
         }).assertNoFailure().receive(on:RunLoop.main).sink{ image in
           self.images[article.id] = image
         }

@@ -29,11 +29,15 @@ struct NewsList: View {
 struct NewsItemCell: View {
 
   var article:Article
-  var image:UIImage
+  var image:Image
   
   var body: some View {
     HStack{
-      Image(uiImage: image).resizable().aspectRatio(contentMode: .fill).frame(width: 40, height: 40).cornerRadius(10)
+      image
+        .resizable(resizingMode:.stretch)
+        .aspectRatio(contentMode: .fit)
+        .frame(width: 40, height: 40)
+        .cornerRadius(10)
     Text(article.title)
     }
   }
