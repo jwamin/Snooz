@@ -42,13 +42,13 @@ struct NewsItemCell: View {
 
 #if DEBUG
 
-let testData = TestData()
+let testData = NewsModel()
 
 struct NewsList_Previews: PreviewProvider {
 
     static var previews: some View {
       Group {
-        //NewsList().environmentObject(TestData())
+        NewsList().environmentObject(testData)
         NewsItemCell(article: testData.articles[0],image: testData.getImage(id: testData.articles[0].id))
       }
     }

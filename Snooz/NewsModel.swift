@@ -34,7 +34,7 @@ class NewsModel : ObservableObject {
   
   var cancellable:AnyCancellable?
   
-  init() {
+  init(load:Bool = true) {
     print("hello world")
     self.loadData()
   }
@@ -69,6 +69,16 @@ class NewsModel : ObservableObject {
       print("error")
     }
   }
+  
+  
+  #if DEBUG
+  
+  convenience init() {
+    self.init(load:false)
+    self.articles = loadTestData()
+  }
+  
+  #endif
   
 }
 

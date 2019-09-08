@@ -63,8 +63,14 @@ struct ArticleDetailView: View {
   }
 }
 
+#if DEBUG
+
+let envobject = NewsModel()
+
 struct ArticleDetailView_Previews: PreviewProvider {
   static var previews: some View {
-    ArticleDetailView(article: TestData().articles[0]).environmentObject(TestData())
+    ArticleDetailView(article: envobject.articles[0]).environmentObject(envobject)
   }
 }
+
+#endif
