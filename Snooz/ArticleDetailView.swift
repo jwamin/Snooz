@@ -59,7 +59,6 @@ struct ArticleDetailView: View {
       Spacer()
     }.edgesIgnoringSafeArea(.all)
       .multilineTextAlignment(.leading)
-      .navigationBarTitle("titlef",displayMode: .inline)
     }
   }
 }

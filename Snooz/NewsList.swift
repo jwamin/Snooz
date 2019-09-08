@@ -17,6 +17,7 @@ struct NewsList: View {
         List(newsModel.articles){ article in
           NavigationLink(destination: 
             ArticleDetailView(article: article)
+              .navigationBarTitle(article.source.name ?? "No source")
           ){
             NewsItemCell(article: article, image: self.newsModel.getImage(id: article.id))
           }
