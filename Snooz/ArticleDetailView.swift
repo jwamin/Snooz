@@ -24,6 +24,7 @@ struct ArticleDetailView: View {
           .foregroundColor(Color.white)
         Spacer()
       }
+      //GeometryReader{ geometry in
     ScrollView(.vertical, showsIndicators: false){
       VStack{
         ZStack{
@@ -42,26 +43,26 @@ struct ArticleDetailView: View {
             Spacer()
           }
           VStack(alignment: .leading, spacing:8){
-            Text(article.title)
+            Text(self.article.title)
               .font(.title)
               .fontWeight(.bold)
-              .multilineTextAlignment(.leading)
-              .lineLimit(.max)
-              .frame(maxWidth: .infinity, maxHeight: .infinity)
-            Text(article.source.name ?? "No Source")
+              .lineLimit(nil)
+              .fixedSize(horizontal: false, vertical: true)
+            Text(self.article.description ?? "No Source")
               .font(.subheadline)
               .fontWeight(.thin)
-              .lineLimit(1)
-              .padding()
-            Text(article.content ?? "No Content")
+              .fixedSize(horizontal: false, vertical: true)
+            Text(self.article.source.name ?? "No Source")
+              .font(.subheadline)
+              .fontWeight(.thin)
+            Text(self.article.content ?? "No Content")
               .font(.body)
-              .lineLimit(10)
-            Text(article.publishedAt)
+              .fixedSize(horizontal: false, vertical: true)
+            Text(self.article.publishedAt)
               .font(.footnote)
-            Text(article.url.absoluteString)
+            Text(self.article.url.absoluteString)
               .font(.footnote)
-              .lineLimit(.max)
-          }.lineLimit(nil).padding()
+          }.padding()
         }
         Button(action: {
           print("oh hello")
@@ -78,11 +79,15 @@ struct ArticleDetailView: View {
         Spacer()
       }
       .background(Color.white)
+        
       .padding(.top,300)
       
+      
     }
-    .padding(.top)
-    }//.edgesIgnoringSafeArea(.all)
+    //.frame(width: geometry.size.width)
+        
+     // }
+  }
   }
 }
 
