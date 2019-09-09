@@ -47,7 +47,7 @@ class NewsModel : ObservableObject {
   
   func loadImages(){
     for article in articles{
-      if !images.keys.contains(article.id), let imageurl = article.imageURL, imageurl.scheme == "https"{
+      if !images.keys.contains(article.id), let imageurl = URL(string: article.imageURL ?? ""), imageurl.scheme == "https"{
         //load image into memory
         _ = URLSession.shared.dataTaskPublisher(for: imageurl).map({ response in
           Image(uiImage:UIImage(data: response.data)!)
@@ -103,7 +103,7 @@ struct Article : Codable, Identifiable {
   let title:String
   let description:String?
   let url:URL
-  let imageURL:URL?
+  let imageURL:String?
   let publishedAt:String //for now
   let content:String?
   
