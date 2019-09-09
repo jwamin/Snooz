@@ -13,6 +13,8 @@
 * (quick) Refresh Control
 
 ### TODO
+* DateFormatter
+* Animations/transitions for zoom view, pan etc
 * Image request optimisations
 
 #### Frameworks Used
