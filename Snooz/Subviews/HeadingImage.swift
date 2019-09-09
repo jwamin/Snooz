@@ -18,8 +18,6 @@ struct HeadingImage: View {
         .resizable(resizingMode: Image.ResizingMode.stretch)
         .aspectRatio(contentMode: .fill)
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 200, idealHeight: 300, maxHeight: 300)
-        .background(Color.green)
-        .foregroundColor(Color.white)
       Spacer()
     }
   }

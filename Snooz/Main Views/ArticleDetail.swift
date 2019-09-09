@@ -13,10 +13,19 @@ struct ArticleDetail: View {
   let article:Article
   @EnvironmentObject var newsModel:NewsModel
   
+  func image()->Image {
+    self.newsModel.getImage(id: self.article.id)
+  }
+  
   var body: some View {
     ScrollView(.vertical, showsIndicators: false){
-    ZStack{
-      HeadingImage(image: newsModel.getImage(id: article.id))
+      ZStack{
+        HeadingImage(image: image())
+        NavigationLink(destination:
+          ImageDetail(image: self.image(), title: article.title, source: article.source.name ?? "")
+        ) {
+          HeadingImage(image: image()).foregroundColor(Color.clear)
+        }
         VStack{
           ZStack{
             VStack{
@@ -55,7 +64,7 @@ let envobject = NewsModel()
 struct ArticleDetailView_Previews: PreviewProvider {
   static var previews: some View {
     Group{
-    ArticleDetail(article: envobject.articles[0]).environmentObject(envobject)
+      ArticleDetail(article: envobject.articles[0]).environmentObject(envobject)
       ArticleDetail(article: envobject.articles[0])
         .environmentObject(envobject)
         .environment(\.colorScheme, .dark)
