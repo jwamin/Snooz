@@ -10,11 +10,9 @@
 * Locale driven news using `Locale.current`
 * Detail view with nice view hierarchy
 * Secondary requests for article images
-
+* (quick) Refresh Control
 
 ### TODO
-* List Cell
-* Refresh Control
 * Image request optimisations
 
 #### Frameworks Used
