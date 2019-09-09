@@ -21,7 +21,9 @@ struct NewsList: View {
           ){
             NewsItemCell(article: article, image: self.newsModel.getImage(id: article.id))
           }
-          }.navigationBarTitle("Snooz",displayMode: .automatic)
+        }.navigationBarTitle("Snooz",displayMode: .automatic).navigationBarItems(trailing: Button(action: {
+          self.newsModel.loadData()
+        }, label: {Image(systemName:"arrow.clockwise")}))
         }
     }
 }
