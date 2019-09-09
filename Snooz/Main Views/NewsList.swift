@@ -16,7 +16,7 @@ struct NewsList: View {
       NavigationView{
         List(newsModel.articles){ article in
           NavigationLink(destination: 
-            ArticleDetailView(article: article)
+            ArticleDetail(article: article)
               .navigationBarTitle(article.source.name ?? "No source")
           ){
             NewsItemCell(article: article, image: self.newsModel.getImage(id: article.id))
@@ -34,11 +34,18 @@ struct NewsItemCell: View {
   var body: some View {
     HStack{
       image
-        .resizable(resizingMode:.stretch)
-        .aspectRatio(contentMode: .fit)
-        .frame(width: 40, height: 40)
+      .resizable()
+        .aspectRatio(contentMode: ContentMode.fill)
+        .frame(width: 50, height: 50)
         .cornerRadius(10)
-    Text(article.title)
+      VStack(alignment: .leading){
+        Text(article.title)
+          .fixedSize(horizontal: false, vertical:true)
+        Text("from \(article.source.name ?? "" )")
+          .font(.subheadline)
+          .foregroundColor(.secondary)
+      }
+      
     }
   }
   
