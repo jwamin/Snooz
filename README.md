@@ -16,6 +16,7 @@
 * DateFormatter
 * Animations/transitions for zoom view, pan etc
 * Image request optimisations
+* Dark mode fix. Seriously, i'm using SwiftUI `Color`. There's no need for dark mode to be this broken!
 
 #### Frameworks Used
 `SwiftUI` `Combine`
