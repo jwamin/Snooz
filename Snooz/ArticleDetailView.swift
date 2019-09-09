@@ -93,7 +93,12 @@ let envobject = NewsModel()
 
 struct ArticleDetailView_Previews: PreviewProvider {
   static var previews: some View {
+    Group{
     ArticleDetailView(article: envobject.articles[0]).environmentObject(envobject)
+      ArticleDetailView(article: envobject.articles[0])
+        .environmentObject(envobject)
+        .environment(\.colorScheme, .dark)
+    }
   }
 }
 
