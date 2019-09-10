@@ -15,6 +15,7 @@
 * Basic LaunchScreen Storyboard with AutoLayoutConstraints
 
 ### TODO
+* Share button
 * Dark mode fix. Seriously, i'm using SwiftUI `Color`. There's no need for dark mode to be this broken!
 * DateFormatter
 * Animations/transitions for zoom view, pan etc

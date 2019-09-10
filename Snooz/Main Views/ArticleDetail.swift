@@ -44,7 +44,7 @@ struct ArticleDetail: View {
             }
             ArticleBody(article:article)
           }
-          ShareButton()
+          ShareButton(url: article.url)
           Spacer()
         }
         .background(Color.white)

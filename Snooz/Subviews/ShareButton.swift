@@ -9,24 +9,32 @@
 import SwiftUI
 
 struct ShareButton: View {
+  let url:URL
+  @State private var showShareSheet:Bool = false
     var body: some View {
-        Button(action: {
-          print("oh hello")
-        }) {
+      Button(action: {
+        self.showShareSheet.toggle()
+        print(self.showShareSheet)
+      }) {
           HStack(alignment:.center){
             Image(systemName: "square.and.arrow.up")
             Text("Share")
           }
+        }.sheet(isPresented: $showShareSheet, onDismiss: {
+          self.showShareSheet = false
+        }) {
+          ShareSheet(url: self.url)
+          //Text("\(self.url.absoluteString)")
         }
-        .padding(.horizontal, 10)
-        .padding([.top,.bottom], 5)
-        .background(Color.gray)
+      .padding(.horizontal, 30)
+        .padding([.top,.bottom], 15)
+        .background(Color.lightGrey)
         .cornerRadius(10)
     }
 }
 
 struct ShareButton_Previews: PreviewProvider {
     static var previews: some View {
-        ShareButton()
+      ShareButton(url: URL(string: "http://www.google.com")!).previewLayout(.sizeThatFits)
     }
 }

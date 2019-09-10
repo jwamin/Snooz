@@ -38,6 +38,6 @@ struct ArticleBody: View {
 
 struct ArticleBody_Previews: PreviewProvider {
     static var previews: some View {
-      ArticleBody(article: testData.articles[0])
+      ArticleBody(article: testData.articles[0]).previewLayout(.sizeThatFits)
     }
 }

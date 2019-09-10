@@ -22,6 +22,7 @@
 		576B6F0423269938001F4B31 /* HeadingImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B6F0323269938001F4B31 /* HeadingImage.swift */; };
 		576B6F0623269A5A001F4B31 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B6F0523269A5A001F4B31 /* DataStructures.swift */; };
 		57B34CAD23252AD400208D78 /* ArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B34CAC23252AD400208D78 /* ArticleDetail.swift */; };
+		57E458F62327BF3600A8E8A4 /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E458F52327BF3600A8E8A4 /* Sharing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		576B6F0323269938001F4B31 /* HeadingImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingImage.swift; sourceTree = "<group>"; };
 		576B6F0523269A5A001F4B31 /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
 		57B34CAC23252AD400208D78 /* ArticleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetail.swift; sourceTree = "<group>"; };
+		57E458F52327BF3600A8E8A4 /* Sharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		576B6F0723269AD9001F4B31 /* Main Views */ = {
 			isa = PBXGroup;
 			children = (
+				57E458F52327BF3600A8E8A4 /* Sharing.swift */,
 				5700D4992323F65C005B818F /* NewsList.swift */,
 				57B34CAC23252AD400208D78 /* ArticleDetail.swift */,
 				575E745823269E7B00AFCAF9 /* ImageDetail.swift */,
@@ -208,6 +211,7 @@
 				575E745923269E7B00AFCAF9 /* ImageDetail.swift in Sources */,
 				576B6F0623269A5A001F4B31 /* DataStructures.swift in Sources */,
 				5700D4AF23243DA8005B818F /* TestData.swift in Sources */,
+				57E458F62327BF3600A8E8A4 /* Sharing.swift in Sources */,
 				5700D4982323F65C005B818F /* SceneDelegate.swift in Sources */,
 				576B6F02232698E6001F4B31 /* ArticleBody.swift in Sources */,
 				5700D49A2323F65C005B818F /* NewsList.swift in Sources */,
