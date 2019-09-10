@@ -21,8 +21,18 @@ class NewsModel : ObservableObject {
     }
   }
   
-  func getImage(id:UUID)->Image {
-    self.images[id] ?? Image(systemName: "doc.richtext")
+  private func getImage(id:UUID)-> Image? {
+   
+    return self.images[id]
+   
+  }
+  
+  func image(id:UUID)->Image {
+    if let image = self.getImage(id: id){
+      return image
+    } else {
+      return Image(systemName: "doc.richtext")
+    }
   }
   
   var articles:[Article] = [] {

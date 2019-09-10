@@ -19,7 +19,7 @@ struct NewsList: View {
             ArticleDetail(article: article)
               .navigationBarTitle(article.source.name ?? "No source")
           ){
-            NewsItemCell(article: article, image: self.newsModel.getImage(id: article.id))
+            NewsItemCell(article: article, image: self.newsModel.image(id: article.id))
           }
         }.navigationBarTitle("Snooz",displayMode: .automatic).navigationBarItems(trailing: Button(action: {
           self.newsModel.loadData()
@@ -62,7 +62,7 @@ struct NewsList_Previews: PreviewProvider {
     static var previews: some View {
       Group {
         NewsList().environmentObject(testData)
-        NewsItemCell(article: testData.articles[0],image: testData.getImage(id: testData.articles[0].id))
+        NewsItemCell(article: testData.articles[0],image: testData.image(id: testData.articles[0].id))
       }
     }
 }

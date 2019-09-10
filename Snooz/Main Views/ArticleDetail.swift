@@ -13,18 +13,14 @@ struct ArticleDetail: View {
   let article:Article
   @EnvironmentObject var newsModel:NewsModel
   
-  func image()->Image {
-    self.newsModel.getImage(id: self.article.id)
-  }
-  
   var body: some View {
     ScrollView(.vertical, showsIndicators: false){
       ZStack{
-        HeadingImage(image: image())
+        HeadingImage(image: newsModel.image(id:article.id))
         NavigationLink(destination:
-          ImageDetail(image: self.image(), title: article.title, source: article.source.name ?? "")
+          ImageDetail(image: newsModel.image(id: self.article.id), title: article.title, source: article.source.name ?? "")
         ) {
-          HeadingImage(image: image()).foregroundColor(Color.clear)
+          HeadingImage(image: newsModel.image(id:self.article.id)).foregroundColor(Color.clear)
         }
         VStack{
           ZStack{
@@ -32,7 +28,7 @@ struct ArticleDetail: View {
               HStack{
                 Image(systemName: "doc.richtext")
                   .resizable()
-                  .aspectRatio(1, contentMode: .fit)
+                  .aspectRatio(0.8, contentMode: .fit)
                   .padding()
                   .frame(width: 100, height: 100)
                   .background(Color.white)
