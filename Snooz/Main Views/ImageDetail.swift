@@ -21,7 +21,9 @@ struct ImageDetail: View {
           .resizable()
           .aspectRatio(contentMode: (zoomed ? .fill : .fit))
           .onTapGesture {
-            self.zoomed = !self.zoomed
+            withAnimation{
+              self.zoomed = !self.zoomed
+            }
         }
         VStack{
           Spacer()
@@ -34,6 +36,7 @@ struct ImageDetail: View {
             .font(.subheadline)
             .foregroundColor(.secondary)
             }.padding()
+            .opacity(self.zoomed ? 0.0 : 1.0)
             Spacer()
           }
         }
