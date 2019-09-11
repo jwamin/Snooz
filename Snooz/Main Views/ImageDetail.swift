@@ -21,7 +21,7 @@ struct ImageDetail: View {
           .resizable()
           .aspectRatio(contentMode: (zoomed ? .fill : .fit))
           .onTapGesture {
-            withAnimation{
+            withAnimation(.spring()){
               self.zoomed = !self.zoomed
             }
         }
