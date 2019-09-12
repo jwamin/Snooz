@@ -16,6 +16,19 @@
 		5700D4AA2323F69C005B818F /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700D4A92323F69C005B818F /* NewsModel.swift */; };
 		5700D4AD2323F780005B818F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700D4AC2323F780005B818F /* Constants.swift */; };
 		5700D4AF23243DA8005B818F /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700D4AE23243DA8005B818F /* TestData.swift */; };
+		5710AF1A232A6617003A0304 /* Snooz.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5710AF19232A6617003A0304 /* Snooz.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5710AF20232A6617003A0304 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5710AF1E232A6617003A0304 /* Interface.storyboard */; };
+		5710AF22232A6618003A0304 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5710AF21232A6618003A0304 /* Assets.xcassets */; };
+		5710AF29232A6619003A0304 /* SnoozWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5710AF28232A6619003A0304 /* SnoozWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5710AF2E232A6619003A0304 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5710AF2D232A6619003A0304 /* ContentView.swift */; };
+		5710AF30232A6619003A0304 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5710AF2F232A6619003A0304 /* HostingController.swift */; };
+		5710AF32232A6619003A0304 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5710AF31232A6619003A0304 /* ExtensionDelegate.swift */; };
+		5710AF34232A6619003A0304 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5710AF33232A6619003A0304 /* Assets.xcassets */; };
+		5710AF37232A6619003A0304 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5710AF36232A6619003A0304 /* Preview Assets.xcassets */; };
+		5710AF44232A6657003A0304 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B6F0523269A5A001F4B31 /* DataStructures.swift */; };
+		5710AF45232A665B003A0304 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700D4AE23243DA8005B818F /* TestData.swift */; };
+		5710AF46232A665F003A0304 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700D4A92323F69C005B818F /* NewsModel.swift */; };
+		5710AF47232A6673003A0304 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700D4AC2323F780005B818F /* Constants.swift */; };
 		575E745923269E7B00AFCAF9 /* ImageDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575E745823269E7B00AFCAF9 /* ImageDetail.swift */; };
 		576B6F00232698C1001F4B31 /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B6EFF232698C1001F4B31 /* ShareButton.swift */; };
 		576B6F02232698E6001F4B31 /* ArticleBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B6F01232698E6001F4B31 /* ArticleBody.swift */; };
@@ -24,6 +37,48 @@
 		57B34CAD23252AD400208D78 /* ArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B34CAC23252AD400208D78 /* ArticleDetail.swift */; };
 		57E458F62327BF3600A8E8A4 /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E458F52327BF3600A8E8A4 /* Sharing.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5710AF1B232A6617003A0304 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5700D48A2323F65C005B818F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5710AF18232A6617003A0304;
+			remoteInfo = "SnoozWatch WatchKit App";
+		};
+		5710AF2A232A6619003A0304 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5700D48A2323F65C005B818F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5710AF27232A6619003A0304;
+			remoteInfo = "SnoozWatch WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5710AF3B232A6619003A0304 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				5710AF1A232A6617003A0304 /* Snooz.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5710AF3E232A6619003A0304 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5710AF29232A6619003A0304 /* SnoozWatch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5700D4922323F65C005B818F /* Snooz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snooz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +93,18 @@
 		5700D4AB2323F6A9005B818F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5700D4AC2323F780005B818F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5700D4AE23243DA8005B818F /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		5710AF16232A6617003A0304 /* SnoozWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnoozWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5710AF19232A6617003A0304 /* Snooz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snooz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5710AF1F232A6617003A0304 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		5710AF21232A6618003A0304 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5710AF23232A6618003A0304 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5710AF28232A6619003A0304 /* SnoozWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SnoozWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5710AF2D232A6619003A0304 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5710AF2F232A6619003A0304 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		5710AF31232A6619003A0304 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		5710AF33232A6619003A0304 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5710AF36232A6619003A0304 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5710AF38232A6619003A0304 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		575E745823269E7B00AFCAF9 /* ImageDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetail.swift; sourceTree = "<group>"; };
 		576B6EFF232698C1001F4B31 /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
 		576B6F01232698E6001F4B31 /* ArticleBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleBody.swift; sourceTree = "<group>"; };
@@ -55,6 +122,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5710AF25232A6619003A0304 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -63,6 +137,8 @@
 			children = (
 				5700D4AB2323F6A9005B818F /* README.md */,
 				5700D4942323F65C005B818F /* Snooz */,
+				5710AF1D232A6617003A0304 /* SnoozWatch WatchKit App */,
+				5710AF2C232A6619003A0304 /* SnoozWatch WatchKit Extension */,
 				5700D4932323F65C005B818F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,6 +147,9 @@
 			isa = PBXGroup;
 			children = (
 				5700D4922323F65C005B818F /* Snooz.app */,
+				5710AF16232A6617003A0304 /* SnoozWatch.app */,
+				5710AF19232A6617003A0304 /* Snooz.app */,
+				5710AF28232A6619003A0304 /* SnoozWatch WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +175,37 @@
 			isa = PBXGroup;
 			children = (
 				5700D49E2323F65D005B818F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5710AF1D232A6617003A0304 /* SnoozWatch WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				5710AF1E232A6617003A0304 /* Interface.storyboard */,
+				5710AF21232A6618003A0304 /* Assets.xcassets */,
+				5710AF23232A6618003A0304 /* Info.plist */,
+			);
+			path = "SnoozWatch WatchKit App";
+			sourceTree = "<group>";
+		};
+		5710AF2C232A6619003A0304 /* SnoozWatch WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5710AF2D232A6619003A0304 /* ContentView.swift */,
+				5710AF2F232A6619003A0304 /* HostingController.swift */,
+				5710AF31232A6619003A0304 /* ExtensionDelegate.swift */,
+				5710AF33232A6619003A0304 /* Assets.xcassets */,
+				5710AF38232A6619003A0304 /* Info.plist */,
+				5710AF35232A6619003A0304 /* Preview Content */,
+			);
+			path = "SnoozWatch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		5710AF35232A6619003A0304 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5710AF36232A6619003A0304 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -151,6 +261,57 @@
 			productReference = 5700D4922323F65C005B818F /* Snooz.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5710AF15232A6617003A0304 /* SnoozWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5710AF43232A6619003A0304 /* Build configuration list for PBXNativeTarget "SnoozWatch" */;
+			buildPhases = (
+				5710AF14232A6617003A0304 /* Resources */,
+				5710AF3B232A6619003A0304 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5710AF1C232A6617003A0304 /* PBXTargetDependency */,
+			);
+			name = SnoozWatch;
+			productName = SnoozWatch;
+			productReference = 5710AF16232A6617003A0304 /* SnoozWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		5710AF18232A6617003A0304 /* SnoozWatch WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5710AF42232A6619003A0304 /* Build configuration list for PBXNativeTarget "SnoozWatch WatchKit App" */;
+			buildPhases = (
+				5710AF17232A6617003A0304 /* Resources */,
+				5710AF3E232A6619003A0304 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5710AF2B232A6619003A0304 /* PBXTargetDependency */,
+			);
+			name = "SnoozWatch WatchKit App";
+			productName = "SnoozWatch WatchKit App";
+			productReference = 5710AF19232A6617003A0304 /* Snooz.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		5710AF27232A6619003A0304 /* SnoozWatch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5710AF41232A6619003A0304 /* Build configuration list for PBXNativeTarget "SnoozWatch WatchKit Extension" */;
+			buildPhases = (
+				5710AF24232A6619003A0304 /* Sources */,
+				5710AF25232A6619003A0304 /* Frameworks */,
+				5710AF26232A6619003A0304 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SnoozWatch WatchKit Extension";
+			productName = "SnoozWatch WatchKit Extension";
+			productReference = 5710AF28232A6619003A0304 /* SnoozWatch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -162,6 +323,15 @@
 				ORGANIZATIONNAME = "Joss Manger";
 				TargetAttributes = {
 					5700D4912323F65C005B818F = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					5710AF15232A6617003A0304 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					5710AF18232A6617003A0304 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					5710AF27232A6619003A0304 = {
 						CreatedOnToolsVersion = 11.0;
 					};
 				};
@@ -180,6 +350,9 @@
 			projectRoot = "";
 			targets = (
 				5700D4912323F65C005B818F /* Snooz */,
+				5710AF15232A6617003A0304 /* SnoozWatch */,
+				5710AF18232A6617003A0304 /* SnoozWatch WatchKit App */,
+				5710AF27232A6619003A0304 /* SnoozWatch WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -192,6 +365,31 @@
 				5700D4A22323F65D005B818F /* LaunchScreen.storyboard in Resources */,
 				5700D49F2323F65D005B818F /* Preview Assets.xcassets in Resources */,
 				5700D49C2323F65D005B818F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5710AF14232A6617003A0304 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5710AF17232A6617003A0304 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5710AF22232A6618003A0304 /* Assets.xcassets in Resources */,
+				5710AF20232A6617003A0304 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5710AF26232A6619003A0304 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5710AF37232A6619003A0304 /* Preview Assets.xcassets in Resources */,
+				5710AF34232A6619003A0304 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +416,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5710AF24232A6619003A0304 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5710AF46232A665F003A0304 /* NewsModel.swift in Sources */,
+				5710AF30232A6619003A0304 /* HostingController.swift in Sources */,
+				5710AF44232A6657003A0304 /* DataStructures.swift in Sources */,
+				5710AF2E232A6619003A0304 /* ContentView.swift in Sources */,
+				5710AF47232A6673003A0304 /* Constants.swift in Sources */,
+				5710AF45232A665B003A0304 /* TestData.swift in Sources */,
+				5710AF32232A6619003A0304 /* ExtensionDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5710AF1C232A6617003A0304 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5710AF18232A6617003A0304 /* SnoozWatch WatchKit App */;
+			targetProxy = 5710AF1B232A6617003A0304 /* PBXContainerItemProxy */;
+		};
+		5710AF2B232A6619003A0304 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5710AF27232A6619003A0304 /* SnoozWatch WatchKit Extension */;
+			targetProxy = 5710AF2A232A6619003A0304 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5700D4A02323F65D005B818F /* LaunchScreen.storyboard */ = {
@@ -227,6 +452,14 @@
 				5700D4A12323F65D005B818F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5710AF1E232A6617003A0304 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5710AF1F232A6617003A0304 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -386,6 +619,118 @@
 			};
 			name = Release;
 		};
+		5710AF39232A6619003A0304 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3C42F7N9CQ;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.jossy.SnoozWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5710AF3A232A6619003A0304 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3C42F7N9CQ;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.jossy.SnoozWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		5710AF3C232A6619003A0304 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3C42F7N9CQ;
+				IBSC_MODULE = SnoozWatch_WatchKit_Extension;
+				INFOPLIST_FILE = "SnoozWatch WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = co.jossy.SnoozWatch.watchkitapp;
+				PRODUCT_NAME = Snooz;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		5710AF3D232A6619003A0304 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3C42F7N9CQ;
+				IBSC_MODULE = SnoozWatch_WatchKit_Extension;
+				INFOPLIST_FILE = "SnoozWatch WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = co.jossy.SnoozWatch.watchkitapp;
+				PRODUCT_NAME = Snooz;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		5710AF3F232A6619003A0304 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SnoozWatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 3C42F7N9CQ;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "SnoozWatch WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.jossy.SnoozWatch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		5710AF40232A6619003A0304 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SnoozWatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 3C42F7N9CQ;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "SnoozWatch WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.jossy.SnoozWatch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -403,6 +748,33 @@
 			buildConfigurations = (
 				5700D4A72323F65D005B818F /* Debug */,
 				5700D4A82323F65D005B818F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5710AF41232A6619003A0304 /* Build configuration list for PBXNativeTarget "SnoozWatch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5710AF3F232A6619003A0304 /* Debug */,
+				5710AF40232A6619003A0304 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5710AF42232A6619003A0304 /* Build configuration list for PBXNativeTarget "SnoozWatch WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5710AF3C232A6619003A0304 /* Debug */,
+				5710AF3D232A6619003A0304 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5710AF43232A6619003A0304 /* Build configuration list for PBXNativeTarget "SnoozWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5710AF39232A6619003A0304 /* Debug */,
+				5710AF3A232A6619003A0304 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
