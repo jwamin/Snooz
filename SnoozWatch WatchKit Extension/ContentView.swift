@@ -15,11 +15,28 @@ struct ContentView: View {
     var body: some View {
       List(model.articles){ article in
         NavigationLink(destination:
-          Text("hello world")
+          GeometryReader{ geometry in
+            ZStack{
+              self.model.image(id: article.id)
+              .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: geometry.size.width, height: geometry.size.height)
+                .padding()
+            Text(article.title)
+              .font(.title)
+              .padding()
+            }
+          }
         ){
         HStack{
           self.model.image(id: article.id)
+          .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: 40, height: 40)
+            .padding()
           Text(article.title)
+            
+          .padding()
         }
         }
       }.navigationBarTitle("Snooz")
