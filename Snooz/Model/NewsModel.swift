@@ -11,10 +11,9 @@ import Combine
 
 class NewsModel : ObservableObject {
   
-  var objectWillChange: ObservableObjectPublisher = ObservableObjectPublisher()
   var load:Bool
   
-  internal var images = [UUID:Image]() {
+  @Published var images = [UUID:Image]() {
     didSet{
       print(images)
       self.objectWillChange.send()
@@ -22,9 +21,9 @@ class NewsModel : ObservableObject {
   }
   
   private func getImage(id:UUID)-> Image? {
-   
+    
     return self.images[id]
-   
+    
   }
   
   func image(id:UUID)->Image {
@@ -55,15 +54,19 @@ class NewsModel : ObservableObject {
     }
   }
   
+  var anyCancellables = [AnyCancellable]()
+  
   func loadImages(){
     for article in articles{
       if !images.keys.contains(article.id), let imageurl = URL(string: article.imageURL ?? ""), imageurl.scheme == "https"{
         //load image into memory
-        _ = URLSession.shared.dataTaskPublisher(for: imageurl).map({ response in
+        anyCancellables += [URLSession.shared.dataTaskPublisher(for: imageurl).map({ response in
           Image(uiImage:UIImage(data: response.data)!)
-        }).assertNoFailure().receive(on:RunLoop.main).sink{ image in
-          self.images[article.id] = image
-        }
+        }).assertNoFailure()
+          .receive(on:RunLoop.main)
+          .sink{ image in
+            self.images[article.id] = image
+          }]
       }
     }
   }
@@ -85,6 +88,7 @@ class NewsModel : ObservableObject {
       print("error")
     }
   }
+  
   
   
   #if DEBUG
