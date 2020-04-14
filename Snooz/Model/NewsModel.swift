@@ -89,8 +89,6 @@ class NewsModel : ObservableObject {
     }
   }
   
-  
-  
   #if DEBUG
   
   convenience init() {
@@ -100,4 +98,15 @@ class NewsModel : ObservableObject {
   
   #endif
   
+}
+
+struct NewsModel_Previews: PreviewProvider {
+  static var previews: some View {
+    //ForEach(ContentSizeCategory.AllCases){ item in
+    ForEach(NewsModel().articles){ article in
+      NewsItemCell(article: article, image: Image(systemName: "doc.richtext"))
+        .previewLayout(.sizeThatFits)
+    }
+  //}
+}
 }
