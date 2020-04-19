@@ -25,6 +25,6 @@ struct HeadingImage: View {
 
 struct HeadingImage_Previews: PreviewProvider {
     static var previews: some View {
-      HeadingImage(image: testData.image(id: testData.articles[0].id))
+      HeadingImage(image: Image("calc"))
     }
 }

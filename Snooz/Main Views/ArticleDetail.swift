@@ -11,16 +11,24 @@ import SwiftUI
 struct ArticleDetail: View {
   
   let article:Article
+  var image:Image?
+  
+  private let fallbackImage = Image(systemName: "doc.richtext")
+  
+  private var displayImage: Image {
+    image ?? fallbackImage
+  }
+  
   @EnvironmentObject var newsModel:NewsModel
   
   var body: some View {
     ScrollView(.vertical, showsIndicators: false){
       ZStack{
-        HeadingImage(image: newsModel.image(id:article.id))
+        HeadingImage(image: displayImage)
         NavigationLink(destination:
-          ImageDetail(image: newsModel.image(id: self.article.id), title: article.title, source: article.source.name ?? "")
+          ImageDetail(image: displayImage, title: article.title, source: article.source.name ?? "")
         ) {
-          HeadingImage(image: newsModel.image(id:self.article.id)).foregroundColor(Color.clear)
+          HeadingImage(image: displayImage).foregroundColor(Color.clear)
         }
         VStack{
           ZStack{
@@ -55,14 +63,12 @@ struct ArticleDetail: View {
 
 #if DEBUG
 
-let envobject = NewsModel()
-
 struct ArticleDetailView_Previews: PreviewProvider {
   static var previews: some View {
     Group{
-      ArticleDetail(article: envobject.articles[0]).environmentObject(envobject)
-      ArticleDetail(article: envobject.articles[0])
-        .environmentObject(envobject)
+      ArticleDetail(article: testData.articles[0]).environmentObject(testData)
+      ArticleDetail(article: testData.articles[0])
+        .environmentObject(testData)
         .environment(\.colorScheme, .dark)
     }
   }

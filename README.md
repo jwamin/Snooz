@@ -14,12 +14,13 @@
 * Zoom view on image tap (push w/ `NavigationLink`)
 * Basic LaunchScreen Storyboard with AutoLayoutConstraints
 * Share button to UIKit bridged `UIActivityViewController`
+* Image request optimisations
 
 ### TODO
-* Dark mode fix. Seriously, i'm using SwiftUI `Color`. There's no need for dark mode to be this broken!
+* Dark mode fix. `@Environment var colorScheme: ColorScheme`
 * DateFormatter
 * Animations/transitions for zoom view, pan etc
-* Image request optimisations
+* Further Image request optimisations - optimize `onAppear`?
 * Sources
 
 #### Frameworks Used

@@ -11,72 +11,20 @@ import Combine
 
 class NewsModel : ObservableObject {
   
-  var load:Bool
+  @Published var images = [UUID:Image]()
   
-  @Published var images = [UUID:Image]() {
-    didSet{
-      print(images)
-      self.objectWillChange.send()
-    }
-  }
+  @Published var articles:[Article] = []
   
-  private func getImage(id:UUID)-> Image? {
-    
-    return self.images[id]
-    
-  }
+  private var headlinesTask: AnyCancellable?
   
-  func image(id:UUID)->Image {
-    if let image = self.getImage(id: id){
-      return image
-    } else {
-      return Image(systemName: "doc.richtext")
-    }
-  }
-  
-  var articles:[Article] = [] {
-    didSet{
-      print(articles.count)
-      self.objectWillChange.send()
-      if load {
-        self.loadImages()
-      }
-    }
-  }
-  
-  var cancellable:AnyCancellable?
-  
-  init(load:Bool = true) {
-    print("hello world")
-    self.load = load
-    if load {
-      self.loadData()
-    }
-  }
-  
-  var anyCancellables = [AnyCancellable]()
-  
-  func loadImages(){
-    for article in articles{
-      if !images.keys.contains(article.id), let imageurl = URL(string: article.imageURL ?? ""), imageurl.scheme == "https"{
-        //load image into memory
-        anyCancellables += [URLSession.shared.dataTaskPublisher(for: imageurl).map({ response in
-          Image(uiImage:UIImage(data: response.data)!)
-        }).assertNoFailure()
-          .receive(on:RunLoop.main)
-          .sink{ image in
-            self.images[article.id] = image
-          }]
-      }
-    }
-  }
+  var imageTasks = [UUID:AnyCancellable]()
   
   func loadData(){
     //resetImages
     images = [:]
     if let url = URL(string: Constants.topLocalHeadlines){
       print(url)
-      cancellable = URLSession.shared.dataTaskPublisher(for: url).map({ response in
+      headlinesTask = URLSession.shared.dataTaskPublisher(for: url).map({ response in
         return response.data
       }).decode(type: NewsResponse.self, decoder: JSONDecoder()).tryCatch({ (error) -> AnyPublisher<NewsResponse,Error> in
         print(error)
@@ -89,13 +37,38 @@ class NewsModel : ObservableObject {
     }
   }
   
-  #if DEBUG
+  func loadImage(for identifier:UUID){
+    
+    guard !images.keys.contains(identifier) else {
+      print("already got image for \(identifier)")
+      return
+    }
+    
+    guard let article = articles.first(where: { (article) -> Bool in
+      article.id == identifier
+    }), let urlString = article.imageURL, let url = URL(string:urlString) else {
+      return
+    }
+    
+    imageTasks[identifier] = URLSession.shared.dataTaskPublisher(for: url).map({ response in
+          Image(uiImage:UIImage(data: response.data)!)
+        }).assertNoFailure()
+          .receive(on:RunLoop.main)
+          .sink{ image in
+            self.images[identifier] = image
+            self.imageTasks.removeValue(forKey: identifier)
+          }
+    }
   
-  convenience init() {
-    self.init(load:false)
-    self.articles = loadTestData()
+  func image(id:UUID)->Image? {
+    self.images[id]
   }
   
+  #if DEBUG
+  convenience init(debug: Bool = true) {
+    self.init()
+    self.articles = loadTestData()
+  }
   #endif
   
 }
@@ -103,7 +76,7 @@ class NewsModel : ObservableObject {
 struct NewsModel_Previews: PreviewProvider {
   static var previews: some View {
     //ForEach(ContentSizeCategory.AllCases){ item in
-    ForEach(NewsModel().articles){ article in
+    ForEach(NewsModel(debug: true).articles){ article in
       NewsItemCell(article: article, image: Image(systemName: "doc.richtext"))
         .previewLayout(.sizeThatFits)
     }

@@ -19,7 +19,9 @@ struct NewsList: View {
             ArticleDetail(article: article)
               .navigationBarTitle(article.source.name ?? "No source")
           ){
-            NewsItemCell(article: article, image: self.newsModel.image(id: article.id))
+            NewsItemCell(article: article, image: self.newsModel.image(id: article.id)).onAppear(){
+              self.newsModel.loadImage(for: article.id)
+            }
           }
         }.navigationBarTitle("Snooz",displayMode: .automatic).navigationBarItems(trailing: Button(action: {
           self.newsModel.loadData()
@@ -28,41 +30,17 @@ struct NewsList: View {
     }
 }
 
-struct NewsItemCell: View {
-
-  var article:Article
-  var image:Image
-  
-  var body: some View {
-    HStack{
-      image
-      .resizable()
-        .aspectRatio(contentMode: ContentMode.fill)
-        .frame(width: 50, height: 50)
-        .cornerRadius(10)
-      VStack(alignment: .leading){
-        Text(article.title)
-          .fixedSize(horizontal: false, vertical:true)
-        Text("from \(article.source.name ?? "" )")
-          .font(.subheadline)
-          .foregroundColor(.secondary)
-      }
-      
-    }
-  }
-  
-}
-
 #if DEBUG
 
-let testData = NewsModel()
+let testData = NewsModel(debug: true)
 
 struct NewsList_Previews: PreviewProvider {
 
     static var previews: some View {
       Group {
         NewsList().environmentObject(testData)
-        NewsItemCell(article: testData.articles[0],image: testData.image(id: testData.articles[0].id))
+        NewsList().environmentObject(testData)
+        .environment(\.colorScheme, .dark)
       }
     }
 }

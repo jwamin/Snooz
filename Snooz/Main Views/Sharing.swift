@@ -19,9 +19,6 @@ struct ShareSheet : UIViewControllerRepresentable{
   func makeUIViewController(context: Context) -> UIActivityViewController {
     let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: [])
     activityVC.excludedActivityTypes = []
-//    activityVC.completionWithItemsHandler = { (item,item1,item2,item3) in
-//      print("items:",item,item1,item2,item3)
-//    }
     return activityVC
   }
   
