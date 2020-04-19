@@ -15,14 +15,13 @@ struct NewsItemCell: View {
   
   private let fallbackImage = Image(systemName: "doc.richtext")
   
-  private var displayImage: Image {
-    image?.resizable() ?? fallbackImage
+  private var displayImage: some View {
+    image?.resizable().aspectRatio(contentMode: .fill) ?? fallbackImage.aspectRatio(1, contentMode: .fit)
   }
   
   var body: some View {
     HStack{
       displayImage
-        .aspectRatio(1, contentMode: .fit)
         .frame(width: 50, height: 50)
         .cornerRadius(10)
       VStack(alignment: .leading){

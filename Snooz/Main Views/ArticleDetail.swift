@@ -11,12 +11,11 @@ import SwiftUI
 struct ArticleDetail: View {
   
   let article:Article
-  var image:Image?
   
   private let fallbackImage = Image(systemName: "doc.richtext")
   
   private var displayImage: Image {
-    image ?? fallbackImage
+    newsModel.image(id: article.id) ?? fallbackImage
   }
   
   @EnvironmentObject var newsModel:NewsModel
