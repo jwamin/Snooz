@@ -46,7 +46,7 @@ class NewsModel : ObservableObject {
     
     guard let article = articles.first(where: { (article) -> Bool in
       article.id == identifier
-    }), let urlString = article.imageURL, let url = URL(string:urlString) else {
+    }), let urlString = article.imageURL, let url = URL(string:urlString), url.scheme == "https" else {
       return
     }
     
