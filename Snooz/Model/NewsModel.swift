@@ -114,7 +114,7 @@ class NewsModel : ObservableObject {
 struct NewsModel_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(NewsModel(debug: true).articles){ article in
-            NewsItemCell(article: article, image: Image(systemName: "doc.richtext"))
+            NewsItemCell(article: article, image: Image(systemName: Constants.MainIconString))
                 .previewLayout(.sizeThatFits)
         }
     }

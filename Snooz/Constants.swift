@@ -8,11 +8,15 @@
 
 import SwiftUI
 
+
+
 struct Constants {
-  static let API_KEY = "510332d2557240f496c74ee5687e547e"
+    
+    static let MainIconString = "zzz"
+    static let API_KEY = "510332d2557240f496c74ee5687e547e"
     static let topLocalHeadlines = "https://newsapi.org/v2/top-headlines?country=\(Locale.current.regionCode!.lowercased())&apiKey=\(Self.API_KEY)"
 }
 
 extension Color {
-  static let lightGrey = Color.init(UIColor.systemGray5)
+    static let lightGrey = Color.init(UIColor.systemGray5)
 }

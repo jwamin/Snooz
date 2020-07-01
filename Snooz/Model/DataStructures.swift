@@ -10,9 +10,9 @@ import Foundation
 
 enum Ordering: Int, CaseIterable, Identifiable {
 
+    case alphabetical
     case date
     case source
-    case alphabetical
     
     var id:Int {
         return self.rawValue
@@ -21,7 +21,7 @@ enum Ordering: Int, CaseIterable, Identifiable {
     var displayString: String {
         switch self {
         case .alphabetical:
-            return "Az"
+            return "By Az"
         case .date:
             return "By Date"
         case .source:

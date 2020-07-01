@@ -13,7 +13,7 @@ struct NewsItemCell: View {
   var article:Article
   var image:Image?
   
-  private let fallbackImage = Image(systemName: "doc.richtext")
+  private let fallbackImage = Image(systemName: Constants.MainIconString)
   
   private var displayImage: some View {
     image?.resizable().aspectRatio(contentMode: .fill) ?? fallbackImage.resizable().aspectRatio(contentMode: .fit)

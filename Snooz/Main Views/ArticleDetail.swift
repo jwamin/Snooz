@@ -12,7 +12,7 @@ struct ArticleDetail: View {
     
     let article:Article
     
-    static let fallbackImage = Image(systemName: "doc.richtext")
+    static let fallbackImage = Image(systemName: Constants.MainIconString)
     
     var overrideImage: Image?
     
@@ -35,7 +35,7 @@ struct ArticleDetail: View {
                     ZStack{
                         VStack{
                             HStack{
-                                Image(systemName: "doc.richtext")
+                                Image(systemName: Constants.MainIconString)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .foregroundColor(.black)
