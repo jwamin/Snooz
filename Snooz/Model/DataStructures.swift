@@ -8,6 +8,28 @@
 
 import Foundation
 
+enum Ordering: Int, CaseIterable, Identifiable {
+
+    case date
+    case source
+    case alphabetical
+    
+    var id:Int {
+        return self.rawValue
+    }
+
+    var displayString: String {
+        switch self {
+        case .alphabetical:
+            return "Az"
+        case .date:
+            return "By Date"
+        case .source:
+            return  "By Source"
+        }
+    }
+}
+
 struct NewsResponse : Codable{
   let status:String
   let totalResults:Int
@@ -24,7 +46,7 @@ struct Article : Codable, Identifiable {
   let description:String?
   let url:URL
   let imageURL:String?
-  let publishedAt:String //for now
+  let publishedAt:String
   let content:String?
   
   enum CodingKeys : String, CodingKey {

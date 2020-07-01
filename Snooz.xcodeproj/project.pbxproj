@@ -24,6 +24,7 @@
 		57A85118244CA01D00120D9A /* NewsItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A85117244CA01D00120D9A /* NewsItemCell.swift */; };
 		57B34CAD23252AD400208D78 /* ArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B34CAC23252AD400208D78 /* ArticleDetail.swift */; };
 		57C42FCD24AC132500D3596B /* NewsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C42FCC24AC132500D3596B /* NewsRow.swift */; };
+		57C42FD124AC270700D3596B /* Segmented.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C42FD024AC270700D3596B /* Segmented.swift */; };
 		57E458F62327BF3600A8E8A4 /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E458F52327BF3600A8E8A4 /* Sharing.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		57A85117244CA01D00120D9A /* NewsItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItemCell.swift; sourceTree = "<group>"; };
 		57B34CAC23252AD400208D78 /* ArticleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetail.swift; sourceTree = "<group>"; };
 		57C42FCC24AC132500D3596B /* NewsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRow.swift; sourceTree = "<group>"; };
+		57C42FD024AC270700D3596B /* Segmented.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segmented.swift; sourceTree = "<group>"; };
 		57E458F52327BF3600A8E8A4 /* Sharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 			children = (
 				57E458F52327BF3600A8E8A4 /* Sharing.swift */,
 				5700D4992323F65C005B818F /* NewsList.swift */,
+				57C42FD024AC270700D3596B /* Segmented.swift */,
 				57A85117244CA01D00120D9A /* NewsItemCell.swift */,
 				57B34CAC23252AD400208D78 /* ArticleDetail.swift */,
 				575E745823269E7B00AFCAF9 /* ImageDetail.swift */,
@@ -214,6 +217,7 @@
 				5700D4962323F65C005B818F /* AppDelegate.swift in Sources */,
 				576B6F00232698C1001F4B31 /* ShareButton.swift in Sources */,
 				57B34CAD23252AD400208D78 /* ArticleDetail.swift in Sources */,
+				57C42FD124AC270700D3596B /* Segmented.swift in Sources */,
 				575E745923269E7B00AFCAF9 /* ImageDetail.swift in Sources */,
 				576B6F0623269A5A001F4B31 /* DataStructures.swift in Sources */,
 				5700D4AF23243DA8005B818F /* TestData.swift in Sources */,

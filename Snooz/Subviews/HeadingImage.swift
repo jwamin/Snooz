@@ -17,7 +17,7 @@ struct HeadingImage: View {
       image
         .resizable()
         .aspectRatio(contentMode: .fill)
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 200, idealHeight: 300, maxHeight: 300)
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 200, idealHeight: 300, maxHeight: 300).clipped()
       Spacer()
     }
   }

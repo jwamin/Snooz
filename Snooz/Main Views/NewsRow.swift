@@ -20,7 +20,7 @@ struct NewsRow: View {
         ){
             NewsItemCell(article: article, image: self.newsModel.image(id: article.id))
                 .onAppear(){
-                self.newsModel.loadImage(for: article.id)
+                    self.newsModel.loadImage(for: self.article.id)
             }
         }
     }

@@ -24,11 +24,9 @@ struct ShareButton: View {
           self.showShareSheet = false
         }) {
           ShareSheet(url: self.url)
-          //Text("\(self.url.absoluteString)")
         }
-      .padding(.horizontal, 30)
-        .padding([.top,.bottom], 15)
-        .background(Color.secondary)
+    .padding()
+        .background(Color.primary)
         .cornerRadius(10)
     }
 }

@@ -20,9 +20,10 @@
 * Image request optimisations
 
 ### TODO
-* DateFormatter
-* loaders for 
-* Order By Sources / etc
+* DateFormatter - parse returned date
+* activity indicators for loading images
+* Sections / Headers
+* Some kind of subject inference with Core ML?
 
 #### Frameworks Used
 `SwiftUI` `Combine`

@@ -14,8 +14,16 @@ struct NewsList: View {
     
     var body: some View {
         NavigationView {
+            VStack{
+            Segmented(ordering:$newsModel.ordering).fixedSize().padding()
             List(newsModel.articles){ article in
-                NewsRow(article: article)
+                if self.newsModel.ordering == .source {
+                    Section(header: Text(article.source.name ?? "Unknown Source")) {
+                        NewsRow(article: article)
+                    }
+                } else {
+                    NewsRow(article: article)
+                }
             }.navigationBarTitle("Snooz",displayMode: .automatic)
             .navigationBarItems(trailing: Button(action: {
                 self.newsModel.resetData {
@@ -26,6 +34,7 @@ struct NewsList: View {
             }, label: {
                 Image(systemName:"arrow.clockwise")}
             ))
+            }
         }
     }
 }

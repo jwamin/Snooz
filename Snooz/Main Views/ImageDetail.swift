@@ -14,7 +14,9 @@ struct ImageDetail: View {
     var source:String
     @State var picOffset: CGPoint = .zero
     @State var zoomed = false
-    
+    var titleDisplay: NavigationBarItem.TitleDisplayMode {
+        (self.zoomed ? .inline : .large)
+    }
     var body: some View {
         ZStack {
             ZStack{
@@ -30,11 +32,11 @@ struct ImageDetail: View {
                     .gesture(
                         DragGesture()
                             .onChanged { (move) in
-                                if zoomed {
+                                if self.zoomed {
                                     self.picOffset = CGPoint(x: move.translation.width, y: move.translation.height)
                                 }
                             }.onEnded { (ended) in
-                                if zoomed {
+                                if self.zoomed {
                                     withAnimation(.spring()){
                                         self.picOffset = .zero
                                     }
@@ -57,7 +59,7 @@ struct ImageDetail: View {
                         }
                     }.transition(.opacity)
                 }
-            }.navigationBarTitle(title,displayMode: zoomed ? .inline : .large)
+            }.navigationBarTitle(title) //.navigationBarTitle(title,displayMode: zoomed ? .inline : .large) for some reason busted on iOS13
         }.edgesIgnoringSafeArea(.all)
     }
 }

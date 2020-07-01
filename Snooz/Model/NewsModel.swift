@@ -12,16 +12,45 @@ import Combine
 class NewsModel : ObservableObject {
     
     @Published var images = [UUID:Image]()
-    
     @Published var articles:[Article] = []
+    
+    @Published var ordering: Ordering = .alphabetical {
+        didSet{
+            articles = self.reorder(articles: articles)
+        }
+    }
     
     private var storage = Set<AnyCancellable>()
     
     func resetData(_ callback:()->Void){
-        //resetImages
         images = [:]
         articles = []
         callback()
+    }
+    
+    func reorder(articles:[Article]) -> [Article] {
+        
+        var articles = articles
+        
+        switch self.ordering{
+        case .alphabetical:
+            articles.sort {
+                $0.title < $1.title
+            }
+            break
+        case .date:
+            articles.sort {
+                $0.publishedAt < $1.publishedAt
+            }
+            break
+        case .source:
+            articles.sort {
+                $0.source.name! < $1.source.name!
+            }
+            break
+        }
+        
+        return articles
     }
     
     func loadData(){
@@ -34,7 +63,7 @@ class NewsModel : ObservableObject {
                 print(error)
                 return AnyPublisher<NewsResponse,Error>(Empty())
             }).map({ response in
-                return response.articles
+                return self.reorder(articles: response.articles)
             }).replaceError(with: []).receive(on: RunLoop.main).assign(to: \.articles, on: self).store(in: &storage)
         } else {
             print("error")
@@ -84,11 +113,9 @@ class NewsModel : ObservableObject {
 
 struct NewsModel_Previews: PreviewProvider {
     static var previews: some View {
-        //ForEach(ContentSizeCategory.AllCases){ item in
         ForEach(NewsModel(debug: true).articles){ article in
             NewsItemCell(article: article, image: Image(systemName: "doc.richtext"))
                 .previewLayout(.sizeThatFits)
         }
-        //}
     }
 }
