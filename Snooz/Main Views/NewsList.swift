@@ -39,8 +39,6 @@ struct NewsList: View {
     }
 }
 
-#if DEBUG
-
 let testData = NewsModel(debug: true)
 
 struct NewsList_Previews: PreviewProvider {
@@ -54,4 +52,3 @@ struct NewsList_Previews: PreviewProvider {
     }
 }
 
-#endif
