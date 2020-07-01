@@ -25,6 +25,7 @@ struct NewsRow: View {
         }
     }
 }
+
 struct NewsRow_Previews: PreviewProvider {
     static var previews: some View {
         return NewsRow(article: testData.articles.first!)

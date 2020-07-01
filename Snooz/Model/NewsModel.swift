@@ -102,12 +102,10 @@ class NewsModel : ObservableObject {
         self.images[id]
     }
     
-    #if DEBUG
     convenience init(debug: Bool = true) {
         self.init()
         self.articles = loadTestData()
     }
-    #endif
     
 }
 
