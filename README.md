@@ -8,20 +8,21 @@
 
 ### Done
 * Locale driven news using `Locale.current`
+* Dark Mode!
 * Detail view with nice view hierarchy
-* Secondary requests for article images
+* Animations/transitions for zoom view, pan etc
+* Secondary requests for article images with Combine
 * (quick) Refresh Control
+‘Hello world’
 * Zoom view on image tap (push w/ `NavigationLink`)
 * Basic LaunchScreen Storyboard with AutoLayoutConstraints
 * Share button to UIKit bridged `UIActivityViewController`
 * Image request optimisations
 
 ### TODO
-* Dark mode fix. `@Environment var colorScheme: ColorScheme`
 * DateFormatter
-* Animations/transitions for zoom view, pan etc
-* Further Image request optimisations - optimize `onAppear`?
-* Sources
+* loaders for 
+* Order By Sources / etc
 
 #### Frameworks Used
 `SwiftUI` `Combine`

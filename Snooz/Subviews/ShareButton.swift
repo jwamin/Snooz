@@ -28,7 +28,7 @@ struct ShareButton: View {
         }
       .padding(.horizontal, 30)
         .padding([.top,.bottom], 15)
-        .background(Color.lightGrey)
+        .background(Color.secondary)
         .cornerRadius(10)
     }
 }

@@ -23,6 +23,7 @@
 		576B6F0623269A5A001F4B31 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B6F0523269A5A001F4B31 /* DataStructures.swift */; };
 		57A85118244CA01D00120D9A /* NewsItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A85117244CA01D00120D9A /* NewsItemCell.swift */; };
 		57B34CAD23252AD400208D78 /* ArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B34CAC23252AD400208D78 /* ArticleDetail.swift */; };
+		57C42FCD24AC132500D3596B /* NewsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C42FCC24AC132500D3596B /* NewsRow.swift */; };
 		57E458F62327BF3600A8E8A4 /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E458F52327BF3600A8E8A4 /* Sharing.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		576B6F0523269A5A001F4B31 /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
 		57A85117244CA01D00120D9A /* NewsItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItemCell.swift; sourceTree = "<group>"; };
 		57B34CAC23252AD400208D78 /* ArticleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetail.swift; sourceTree = "<group>"; };
+		57C42FCC24AC132500D3596B /* NewsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRow.swift; sourceTree = "<group>"; };
 		57E458F52327BF3600A8E8A4 /* Sharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,7 @@
 				57A85117244CA01D00120D9A /* NewsItemCell.swift */,
 				57B34CAC23252AD400208D78 /* ArticleDetail.swift */,
 				575E745823269E7B00AFCAF9 /* ImageDetail.swift */,
+				57C42FCC24AC132500D3596B /* NewsRow.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				5700D4982323F65C005B818F /* SceneDelegate.swift in Sources */,
 				576B6F02232698E6001F4B31 /* ArticleBody.swift in Sources */,
 				5700D49A2323F65C005B818F /* NewsList.swift in Sources */,
+				57C42FCD24AC132500D3596B /* NewsRow.swift in Sources */,
 				57A85118244CA01D00120D9A /* NewsItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

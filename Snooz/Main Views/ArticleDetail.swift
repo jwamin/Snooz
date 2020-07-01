@@ -9,68 +9,73 @@
 import SwiftUI
 
 struct ArticleDetail: View {
-  
-  let article:Article
-  
-  private let fallbackImage = Image(systemName: "doc.richtext")
-  
-  private var displayImage: Image {
-    newsModel.image(id: article.id) ?? fallbackImage
-  }
-  
-  @EnvironmentObject var newsModel:NewsModel
-  
-  var body: some View {
-    ScrollView(.vertical, showsIndicators: false){
-      ZStack{
-        HeadingImage(image: displayImage)
-        NavigationLink(destination:
-          ImageDetail(image: displayImage, title: article.title, source: article.source.name ?? "")
-        ) {
-          HeadingImage(image: displayImage).foregroundColor(Color.clear)
-        }
-        VStack{
-          ZStack{
-            VStack{
-              HStack{
-                Image(systemName: "doc.richtext")
-                  .resizable()
-                  .aspectRatio(0.8, contentMode: .fit)
-                  .padding()
-                  .frame(width: 100, height: 100)
-                  .background(Color.white)
-                  .cornerRadius(15)
-                  .padding()
-                Spacer()
-              }.offset(y: -100)
-              Spacer()
-            }
-            ArticleBody(article:article)
-          }
-          ShareButton(url: article.url)
-          Spacer()
-        }
-        .background(Color.white)
-          
-        .padding(.top,300)
-        
-        
-      }
+    
+    let article:Article
+    
+    static let fallbackImage = Image(systemName: "doc.richtext")
+    
+    var overrideImage: Image?
+    
+    private var displayImage: Image {
+        overrideImage ?? (newsModel.image(id: article.id) ?? Self.fallbackImage)
     }
-  }
+    
+    @EnvironmentObject var newsModel:NewsModel
+    
+    var body: some View {
+        ScrollView(.vertical, showsIndicators: false){
+            ZStack{
+                HeadingImage(image: displayImage)
+                NavigationLink(destination:
+                                ImageDetail(image: displayImage, title: article.title, source: article.source.name ?? "")
+                ) {
+                    HeadingImage(image: displayImage).foregroundColor(Color.clear)
+                }
+                VStack{
+                    ZStack{
+                        VStack{
+                            HStack{
+                                Image(systemName: "doc.richtext")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .foregroundColor(.black)
+                                    .padding()
+                                    .frame(width: 100, height: 100)
+                                    .background(Color.white)
+                                    .cornerRadius(15)
+                                    .padding()
+                                Spacer()
+                            }.offset(y: -100)
+                            Spacer()
+                        }
+                        ArticleBody(article:article)
+                    }
+                    ShareButton(url: article.url)
+                }
+                
+                .padding(.top,300)
+                
+                
+            }
+        }
+    }
 }
 
 #if DEBUG
 
 struct ArticleDetailView_Previews: PreviewProvider {
-  static var previews: some View {
-    Group{
-      ArticleDetail(article: testData.articles[0]).environmentObject(testData)
-      ArticleDetail(article: testData.articles[0])
-        .environmentObject(testData)
-        .environment(\.colorScheme, .dark)
+    static var previews: some View {
+        
+        let article = testData.articles[0]
+        let image = Image("test")
+        
+        return Group{
+            ArticleDetail(article: article,overrideImage: image).environmentObject(testData).previewDevice(PreviewDevice(stringLiteral: "iPhone SE 2"))
+            ArticleDetail(article: article).previewDevice(PreviewDevice(stringLiteral: "iPhone 11 Pro"))
+                .environmentObject(testData)
+                .environment(\.colorScheme, .dark)
+        }
     }
-  }
 }
 
 #endif

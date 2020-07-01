@@ -15,7 +15,7 @@ struct HeadingImage: View {
   var body: some View {
     VStack {
       image
-        .resizable(resizingMode: Image.ResizingMode.stretch)
+        .resizable()
         .aspectRatio(contentMode: .fill)
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 200, idealHeight: 300, maxHeight: 300)
       Spacer()

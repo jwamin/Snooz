@@ -9,23 +9,23 @@
 import SwiftUI
 
 struct NewsList: View {
-  
-  @EnvironmentObject var newsModel:NewsModel
-  
+    
+    @EnvironmentObject var newsModel:NewsModel
+    
     var body: some View {
-      NavigationView{
-        List(newsModel.articles){ article in
-          NavigationLink(destination: 
-            ArticleDetail(article: article)
-              .navigationBarTitle(article.source.name ?? "No source")
-          ){
-            NewsItemCell(article: article, image: self.newsModel.image(id: article.id)).onAppear(){
-              self.newsModel.loadImage(for: article.id)
-            }
-          }
-        }.navigationBarTitle("Snooz",displayMode: .automatic).navigationBarItems(trailing: Button(action: {
-          self.newsModel.loadData()
-        }, label: {Image(systemName:"arrow.clockwise")}))
+        NavigationView {
+            List(newsModel.articles){ article in
+                NewsRow(article: article)
+            }.navigationBarTitle("Snooz",displayMode: .automatic)
+            .navigationBarItems(trailing: Button(action: {
+                self.newsModel.resetData {
+                    withAnimation{
+                        self.newsModel.loadData()
+                    }
+                }
+            }, label: {
+                Image(systemName:"arrow.clockwise")}
+            ))
         }
     }
 }
@@ -35,13 +35,13 @@ struct NewsList: View {
 let testData = NewsModel(debug: true)
 
 struct NewsList_Previews: PreviewProvider {
-
+    
     static var previews: some View {
-      Group {
-        NewsList().environmentObject(testData)
-        NewsList().environmentObject(testData)
-        .environment(\.colorScheme, .dark)
-      }
+        Group {
+            NewsList().environmentObject(testData)
+            NewsList().environmentObject(testData)
+                .environment(\.colorScheme, .dark)
+        }
     }
 }
 

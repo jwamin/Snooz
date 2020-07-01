@@ -16,7 +16,7 @@ struct NewsItemCell: View {
   private let fallbackImage = Image(systemName: "doc.richtext")
   
   private var displayImage: some View {
-    image?.resizable().aspectRatio(contentMode: .fill) ?? fallbackImage.aspectRatio(1, contentMode: .fit)
+    image?.resizable().aspectRatio(contentMode: .fill) ?? fallbackImage.resizable().aspectRatio(contentMode: .fit)
   }
   
   var body: some View {
@@ -26,6 +26,7 @@ struct NewsItemCell: View {
         .cornerRadius(10)
       VStack(alignment: .leading){
         Text(article.title)
+            .bold()
           .fixedSize(horizontal: false, vertical:true)
         Text("from \(article.source.name ?? "" )")
           .font(.subheadline)
@@ -41,7 +42,12 @@ struct NewsItemCell: View {
 
 struct NewsItemCell_Previews: PreviewProvider {
     static var previews: some View {
-          NewsItemCell(article: testData.articles[0],image: testData.image(id: testData.articles[0].id))
+        Group {
+            NewsItemCell(article: testData.articles[0],image: testData.image(id: testData.articles[0].id)).previewLayout(.sizeThatFits)
+            NewsItemCell(article: testData.articles[0],image: testData.image(id: testData.articles[0].id)).previewLayout(.sizeThatFits).colorScheme(.dark)
+            NewsItemCell(article: testData.articles[0],image: testData.image(id: testData.articles[0].id)).previewLayout(.sizeThatFits)
+            NewsItemCell(article: testData.articles[0],image: testData.image(id: testData.articles[0].id)).previewLayout(.sizeThatFits).colorScheme(.dark)
+        }
     }
 }
 
