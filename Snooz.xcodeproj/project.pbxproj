@@ -93,6 +93,7 @@
 				5700D49B2323F65D005B818F /* Assets.xcassets */,
 				5700D4A02323F65D005B818F /* LaunchScreen.storyboard */,
 				5700D4A32323F65D005B818F /* Info.plist */,
+				5700D4AE23243DA8005B818F /* TestData.swift */,
 				5700D49D2323F65D005B818F /* Preview Content */,
 			);
 			path = Snooz;
@@ -101,7 +102,6 @@
 		5700D49D2323F65D005B818F /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				5700D4AE23243DA8005B818F /* TestData.swift */,
 				5700D49E2323F65D005B818F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
