@@ -113,7 +113,7 @@ func main(){
         
     }
     } catch {
-        fatalError()
+        fatalError("unable to load json files, contents of directory failure: \(error.localizedDescription)")
     }
     //write back to file
     
@@ -125,8 +125,7 @@ func main(){
     }
     
     FileManager.default.createFile(atPath: "./training-data.json", contents: prettyData, attributes: nil)
-    
-    
+
 }
 
 func processResponse(response: NewsResponse) -> [ArticleClasificationTrainingModel] {
