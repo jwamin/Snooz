@@ -13,17 +13,17 @@
 * Animations/transitions for zoom view, pan etc
 * Secondary requests for article images with Combine
 * (quick) Refresh Control
-‘Hello world’
-* Zoom view on image tap (push w/ `NavigationLink`)
+* Zoom an drag view on image tap (push w/ `NavigationLink`)
 * Basic LaunchScreen Storyboard with AutoLayoutConstraints
 * Share button to UIKit bridged `UIActivityViewController`
 * Image request optimisations
 
 ### TODO
-* DateFormatter - parse returned date
+* DateFormatter - parse returned date (Use swiftUI inbuilt - if possible)
+* update screenshots
 * activity indicators for loading images
-* Sections / Headers
-* Some kind of subject inference with Core ML?
+* Sections / Headers - fix headings so there are distinct
+* Implement CoreML / CreateML Classifier from data over time
 
 #### Frameworks Used
 `SwiftUI` `Combine`
