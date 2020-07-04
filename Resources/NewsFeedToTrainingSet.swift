@@ -131,7 +131,7 @@ func main(){
 func processResponse(response: NewsResponse) -> [ArticleClasificationTrainingModel] {
     var returnArray = Array<ArticleClasificationTrainingModel>()
     for article in response.articles{
-        guard let description = article.description else {
+        guard let description = article.description, !description.isEmpty  else {
             print("failed to get description for \(article.id)")
             continue
         }
