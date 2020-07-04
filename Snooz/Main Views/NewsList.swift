@@ -35,6 +35,18 @@ struct NewsList: View {
                 Image(systemName:"arrow.clockwise")}
             ))
             }
+            
+            
+            GeometryReader { proxy in
+                VStack(spacing:8){
+                    Image(systemName: Constants.MainIconString)
+                        .resizable().aspectRatio(contentMode: .fit).padding()
+                        .frame(width: proxy.size.width * 0.5, height: proxy.size.width * 0.5, alignment: .center)
+                    Text("Snooz").font(.largeTitle).bold()
+                    Text("Select An Article").font(.subheadline)
+                }
+            }
+            
         }
     }
 }
