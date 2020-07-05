@@ -18,7 +18,6 @@ struct ImageDetail: View {
         (self.zoomed ? .inline : .large)
     }
     var body: some View {
-        ZStack {
             ZStack{
                 image
                     .resizable()
@@ -29,6 +28,7 @@ struct ImageDetail: View {
                             self.zoomed = !self.zoomed
                         }
                     }
+                    .clipped()
                     .gesture(
                         DragGesture()
                             .onChanged { (move) in
@@ -59,8 +59,7 @@ struct ImageDetail: View {
                         }
                     }.transition(.opacity)
                 }
-            }.navigationBarTitle(title) //.navigationBarTitle(title,displayMode: zoomed ? .inline : .large) for some reason busted on iOS13
-        }.edgesIgnoringSafeArea(.all)
+            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center).clipped().navigationBarTitle(title).clipped().edgesIgnoringSafeArea(.all) //.navigationBarTitle(title,displayMode: zoomed ? .inline : .large) for some reason busted on iOS13
     }
 }
 

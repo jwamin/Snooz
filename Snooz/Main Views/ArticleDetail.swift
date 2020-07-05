@@ -27,7 +27,7 @@ struct ArticleDetail: View {
             ZStack{
                 HeadingImage(image: displayImage)
                 NavigationLink(destination:
-                                ImageDetail(image: displayImage, title: article.title, source: article.source.name ?? "")
+                                ImageDetail(image: displayImage, title: article.title, source: article.source.name ?? "").clipped()
                 ) {
                     HeadingImage(image: displayImage).foregroundColor(Color.clear)
                 }
