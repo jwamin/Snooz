@@ -21,8 +21,11 @@ struct ImageDetail: View {
             ZStack{
                 image
                     .resizable()
+                    .clipped()
                     .aspectRatio(contentMode: (zoomed ? .fill : .fit))
+                    .clipped()
                     .offset(x: picOffset.x, y: picOffset.y)
+                    .clipped()
                     .onTapGesture {
                         withAnimation(.spring()){
                             self.zoomed = !self.zoomed
@@ -59,7 +62,7 @@ struct ImageDetail: View {
                         }
                     }.transition(.opacity)
                 }
-            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center).clipped().navigationBarTitle(title).clipped().edgesIgnoringSafeArea(.all) //.navigationBarTitle(title,displayMode: zoomed ? .inline : .large) for some reason busted on iOS13
+            }.clipped().frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center).clipped().navigationBarTitle(title).clipped().edgesIgnoringSafeArea(.all) //.navigationBarTitle(title,displayMode: zoomed ? .inline : .large) for some reason busted on iOS13
     }
 }
 

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+NewsData-launchd.plist
+Snooz
+
+Created by Joss Manger on 7/3/20.
+Copyright (c) 2020 Joss Manger. All rights reserved.
+-->
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>co.jossy.snooz-news.data</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/Users/jwamin/sandbox.nosync/beta-projects-2019-20/Snooz/Resources/newsdata.sh</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/jwamin/sandbox.nosync/beta-projects-2019-20/Snooz/Resources/out</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+    	<key>PATH</key>
+    	<string>/Users/jwamin/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin</string>
+    </dict>
+   <key>StartCalendarInterval</key>
+    <array>
+      <dict>
+        <key>Hour</key>
+        <integer>0</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+      </dict>
+      <dict>
+        <key>Hour</key>
+        <integer>6</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+      </dict>
+      <dict>
+        <key>Hour</key>
+        <integer>12</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+      </dict>
+      <dict>
+        <key>Hour</key>
+        <integer>18</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+      </dict>
+    </array>
+  </dict>
+</plist>
