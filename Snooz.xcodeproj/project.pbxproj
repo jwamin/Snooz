@@ -44,6 +44,7 @@
 		572C93D624AFD931003EC9D7 /* newsdata.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = newsdata.sh; sourceTree = "<group>"; };
 		572C93D824AFD9DD003EC9D7 /* co.jossy.snooz-news-data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "co.jossy.snooz-news-data.plist"; sourceTree = "<group>"; };
 		575E745823269E7B00AFCAF9 /* ImageDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetail.swift; sourceTree = "<group>"; };
+		5764A2BD24BC878000F8615A /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		576B6EFF232698C1001F4B31 /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
 		576B6F01232698E6001F4B31 /* ArticleBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleBody.swift; sourceTree = "<group>"; };
 		576B6F0323269938001F4B31 /* HeadingImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingImage.swift; sourceTree = "<group>"; };
@@ -119,6 +120,7 @@
 				572C93D624AFD931003EC9D7 /* newsdata.sh */,
 				572C93D824AFD9DD003EC9D7 /* co.jossy.snooz-news-data.plist */,
 				577A7D3F24B0B6870078AC41 /* NewsFeedToTrainingSet.swift */,
+				5764A2BD24BC878000F8615A /* Models.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";

@@ -91,23 +91,25 @@ extension Data {
 func main(){
     
     var assembledModels = [ArticleClasificationTrainingModel]()
+    var descriptionSet = Set<String>()
+    var duplicateCount = 0
     
     let urlForCurrentDirectory = URL(fileURLWithPath: "./out", isDirectory: true)
     
     do {
+        
     let content = try FileManager.default.contentsOfDirectory(at: urlForCurrentDirectory, includingPropertiesForKeys: [], options: [.skipsHiddenFiles])
-    
+        
     let jsonDecoder = JSONDecoder()
     
     for jsonFileUrl in content {
         
         do {
-            print(FileManager.default.isReadableFile(atPath: jsonFileUrl.absoluteString))
             let jsonData = try Data(contentsOf: jsonFileUrl)
             let response = try jsonDecoder.decode(NewsResponse.self, from: jsonData)
-            assembledModels += processResponse(response: response)
+            assembledModels += processResponse(response: response, descSet: &descriptionSet, dupCount: &duplicateCount)
         } catch {
-            print("failure for \(jsonFileUrl)")
+            print("\n\(jsonFileUrl.absoluteString) is not a readable file path \(FileManager.default.isReadableFile(atPath: jsonFileUrl.absoluteString))\n")
             continue
         }
         
@@ -123,18 +125,33 @@ func main(){
         print("unable to save file")
         return
     }
-    
+    print("\n\nOutputting training data of length \(assembledModels.count), there were \(duplicateCount) duplicates removed.")
     FileManager.default.createFile(atPath: "./training-data.json", contents: prettyData, attributes: nil)
 
 }
 
-func processResponse(response: NewsResponse) -> [ArticleClasificationTrainingModel] {
+//NUMBER_VALUE substitution?
+//PROPER_NOUN removal?
+
+func processResponse(response: NewsResponse, descSet: inout Set<String>, dupCount: inout Int) -> [ArticleClasificationTrainingModel] {
     var returnArray = Array<ArticleClasificationTrainingModel>()
+    
     for article in response.articles{
         guard let description = article.description, !description.isEmpty  else {
             print("failed to get description for \(article.id)")
+            print("\(article.title) \(article.publishedAt)")
             continue
         }
+        
+        //space intense , but gets the job done
+        if descSet.contains(description){
+            print("skipping \(description) because it is part of the set")
+            dupCount += 1
+            continue
+        } else {
+            descSet.insert(description)
+        }
+        
         let classificationData = ArticleClasificationTrainingModel(text: description, label: "")
         returnArray.append(classificationData)
     }
