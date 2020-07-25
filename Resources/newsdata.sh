@@ -9,7 +9,8 @@
 #12pm
 #6pm
 #12am
-say "running launchd task" #helps to debug background process!
+#say "running launchd task" #helps to debug background process!
+#launchd plist permissions must be set to -rw-r--r--
 echo "Running Training Data Capture"
 echo "Downloading Headlines for $(date)"
 
